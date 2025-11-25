@@ -3,806 +3,342 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Atoma Safety - Sicurezza sul Lavoro Semplificata</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <title>Danilo Dell'Orto | Exsternal Consultant · Atoma Safety</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --brand: #00d084;
+            --dark: #0f172a;
+            --muted: #64748b;
+            --bg: #f8fafc;
+        }
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        
+
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #ffffff 0%, #f3fff9 100%);
+            color: var(--dark);
             line-height: 1.6;
-            color: #1a1a1a;
-            background: #ffffff;
             -webkit-font-smoothing: antialiased;
+            padding: 24px;
         }
-        
-        .header {
-            background: #ffffff;
-            border-bottom: 1px solid #e5e5e5;
-            padding: 30px 20px;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-        }
-        
-        .header-content {
-            max-width: 1200px;
+
+        .card {
+            max-width: 1080px;
             margin: 0 auto;
+            background: #ffffff;
+            border-radius: 24px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
+            overflow: hidden;
+            border: 1px solid #e2e8f0;
+        }
+
+        header {
+            padding: 24px 32px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-        }
-        
-        .logo {
-            font-size: 2em;
-            font-weight: 800;
-            color: #1a1a1a;
-            letter-spacing: -0.5px;
-        }
-        
-        .logo-accent {
-            color: #00d084;
-        }
-        
-        .hero {
-            background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
-            padding: 80px 20px;
-            text-align: center;
-            border-bottom: 1px solid #e5e5e5;
-        }
-        
-        .hero-content {
-            max-width: 900px;
-            margin: 0 auto;
-        }
-        
-        .hero h1 {
-            font-size: 3.5em;
-            font-weight: 800;
-            color: #1a1a1a;
-            margin-bottom: 25px;
-            letter-spacing: -1.5px;
-            line-height: 1.1;
-        }
-        
-        .hero-highlight {
-            color: #00d084;
-        }
-        
-        .hero-subtitle {
-            font-size: 1.4em;
-            color: #666;
-            font-weight: 400;
-            margin-bottom: 40px;
-            line-height: 1.5;
-        }
-        
-        .hero-cta {
-            display: flex;
-            gap: 20px;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-        
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        
-        .section {
-            padding: 80px 20px;
-        }
-        
-        .section-header {
-            text-align: center;
-            margin-bottom: 60px;
-        }
-        
-        .section-title {
-            font-size: 2.5em;
-            font-weight: 800;
-            color: #1a1a1a;
-            margin-bottom: 15px;
-            letter-spacing: -1px;
-        }
-        
-        .section-subtitle {
-            font-size: 1.2em;
-            color: #666;
-            font-weight: 400;
-            max-width: 700px;
-            margin: 0 auto;
-        }
-        
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 30px;
-            margin-top: 50px;
-        }
-        
-        .service-card {
             background: #ffffff;
-            border: 1px solid #e5e5e5;
-            border-radius: 16px;
-            padding: 40px;
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
+            border-bottom: 1px solid #e2e8f0;
         }
-        
-        .service-card:hover {
-            border-color: #00d084;
-            box-shadow: 0 10px 40px rgba(0, 208, 132, 0.1);
-            transform: translateY(-5px);
-        }
-        
-        .service-card:hover .service-icon {
-            background: #00d084;
-            color: white;
-        }
-        
-        .service-icon {
-            width: 60px;
-            height: 60px;
-            background: #f0fdf7;
-            border-radius: 12px;
-            display: flex;
+
+        .logo {
+            display: inline-flex;
             align-items: center;
-            justify-content: center;
-            font-size: 1.8em;
-            margin-bottom: 25px;
-            transition: all 0.3s ease;
+            gap: 10px;
         }
-        
-        .service-card h3 {
-            font-size: 1.5em;
-            font-weight: 700;
-            color: #1a1a1a;
-            margin-bottom: 15px;
-        }
-        
-        .service-card p {
-            color: #666;
-            font-size: 1.05em;
-            line-height: 1.7;
-        }
-        
-        .benefits-section {
-            background: #f8f9fa;
-            border-top: 1px solid #e5e5e5;
-            border-bottom: 1px solid #e5e5e5;
-        }
-        
-        .benefits-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 40px;
-            margin-top: 50px;
-        }
-        
-        .benefit-item {
-            display: flex;
-            gap: 20px;
-        }
-        
-        .benefit-icon {
-            width: 50px;
-            height: 50px;
-            background: #00d084;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 1.5em;
-            font-weight: 700;
-            flex-shrink: 0;
-        }
-        
-        .benefit-content h4 {
-            font-size: 1.2em;
-            font-weight: 700;
-            color: #1a1a1a;
-            margin-bottom: 8px;
-        }
-        
-        .benefit-content p {
-            color: #666;
-            line-height: 1.6;
-        }
-        
-        .stats-section {
-            background: #1a1a1a;
-            color: white;
-            text-align: center;
-        }
-        
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 50px;
-            margin-top: 50px;
-        }
-        
-        .stat-item {
-            padding: 20px;
-        }
-        
-        .stat-number {
-            font-size: 4em;
-            font-weight: 800;
-            color: #00d084;
+
+        .logo svg {
+            height: 42px;
+            width: auto;
             display: block;
-            margin-bottom: 10px;
-            letter-spacing: -2px;
         }
-        
-        .stat-label {
-            font-size: 1.1em;
-            color: rgba(255,255,255,0.8);
-            font-weight: 500;
+
+        main {
+            padding: 40px 32px 48px;
         }
-        
-        .cta-section {
-            background: linear-gradient(135deg, #00d084 0%, #00b872 100%);
-            color: white;
-            text-align: center;
-            padding: 80px 20px;
+
+        .intro {
+            display: grid;
+            grid-template-columns: 3fr 2fr;
+            gap: 32px;
+            align-items: center;
         }
-        
-        .cta-section h2 {
-            font-size: 3em;
-            font-weight: 800;
-            margin-bottom: 20px;
+
+        .eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px 16px;
+            border-radius: 999px;
+            background: #e8fff5;
+            color: #0f5132;
+            font-weight: 700;
+            border: 1px solid #bbf7d0;
+        }
+
+        h1 {
+            font-size: 3.2rem;
+            line-height: 1.1;
+            margin: 18px 0 12px;
             letter-spacing: -1px;
         }
-        
-        .cta-section p {
-            font-size: 1.3em;
-            margin-bottom: 40px;
-            opacity: 0.95;
+
+        .subtitle {
+            color: var(--muted);
+            font-size: 1.1rem;
+            margin-bottom: 22px;
         }
-        
-        .cta-buttons {
+
+        .cta-row {
             display: flex;
-            gap: 20px;
-            justify-content: center;
             flex-wrap: wrap;
-            margin-bottom: 40px;
+            gap: 12px;
         }
-        
+
         .btn {
             display: inline-flex;
             align-items: center;
             gap: 10px;
-            padding: 18px 40px;
+            padding: 14px 18px;
             border-radius: 12px;
+            font-weight: 700;
+            font-size: 1rem;
+            border: 1px solid transparent;
             text-decoration: none;
-            font-weight: 600;
-            font-size: 1.1em;
-            transition: all 0.3s ease;
-            border: 2px solid transparent;
+            transition: all 0.2s ease;
         }
-        
+
         .btn-primary {
-            background: white;
-            color: #00d084;
-            border: 2px solid white;
+            background: var(--brand);
+            color: #0c3b29;
+            border-color: var(--brand);
+            box-shadow: 0 10px 20px rgba(0, 208, 132, 0.25);
         }
-        
+
         .btn-primary:hover {
-            background: transparent;
-            color: white;
             transform: translateY(-2px);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            box-shadow: 0 12px 26px rgba(0, 208, 132, 0.35);
         }
-        
-        .btn-secondary {
-            background: transparent;
-            color: white;
-            border: 2px solid white;
+
+        .btn-outline {
+            background: #ffffff;
+            color: var(--dark);
+            border-color: #d6d6d6;
         }
-        
-        .btn-secondary:hover {
-            background: white;
-            color: #00d084;
+
+        .btn-outline:hover {
+            border-color: var(--brand);
+            color: #065f46;
             transform: translateY(-2px);
         }
-        
-        .btn-whatsapp {
-            background: #25D366;
-            color: white;
-            border: 2px solid #25D366;
+
+        .contact-panel {
+            background: #f8faff;
+            border: 1px solid #e2e8f0;
+            border-radius: 18px;
+            padding: 22px;
         }
-        
-        .btn-whatsapp:hover {
-            background: #128C7E;
-            border-color: #128C7E;
-            transform: translateY(-2px);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+
+        .contact-title {
+            font-weight: 800;
+            margin-bottom: 8px;
         }
-        
-        .contact-card {
-            background: rgba(255,255,255,0.15);
-            backdrop-filter: blur(10px);
-            border-radius: 16px;
-            padding: 40px;
-            max-width: 600px;
-            margin: 0 auto;
-            border: 1px solid rgba(255,255,255,0.2);
-        }
-        
+
         .contact-item {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            margin: 20px 0;
-            font-size: 1.1em;
-        }
-        
-        .contact-icon {
-            width: 40px;
-            height: 40px;
-            background: rgba(255,255,255,0.2);
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        
-        .plans-section {
-            background: #ffffff;
-        }
-        
-        .plans-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 30px;
-            margin-top: 50px;
-        }
-        
-        .plan-card {
-            background: #ffffff;
-            border: 2px solid #e5e5e5;
-            border-radius: 20px;
-            padding: 50px 40px;
-            text-align: center;
-            transition: all 0.3s ease;
-            position: relative;
-        }
-        
-        .plan-card:hover {
-            border-color: #00d084;
-            transform: translateY(-10px);
-            box-shadow: 0 20px 50px rgba(0, 208, 132, 0.15);
-        }
-        
-        .plan-badge {
-            display: inline-block;
-            padding: 8px 20px;
-            background: #f0fdf7;
-            color: #00d084;
-            border-radius: 50px;
-            font-size: 0.9em;
-            font-weight: 600;
-            margin-bottom: 20px;
-            border: 1px solid #00d084;
-        }
-        
-        .plan-card h3 {
-            font-size: 2em;
-            font-weight: 800;
-            color: #1a1a1a;
-            margin-bottom: 15px;
-        }
-        
-        .plan-card p {
-            color: #666;
-            font-size: 1.05em;
-            line-height: 1.7;
-            margin-bottom: 30px;
-        }
-        
-        .plan-features {
-            list-style: none;
-            margin: 30px 0;
-            text-align: left;
-        }
-        
-        .plan-features li {
-            padding: 12px 0;
-            color: #666;
-            display: flex;
-            align-items: center;
+            grid-template-columns: auto 1fr;
             gap: 12px;
-        }
-        
-        .plan-features li:before {
-            content: "✓";
-            color: #00d084;
-            font-weight: 700;
-            font-size: 1.3em;
-        }
-        
-        .footer {
-            background: #1a1a1a;
-            color: white;
-            padding: 60px 20px 30px;
-            text-align: center;
-        }
-        
-        .footer-content {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        
-        .footer-logo {
-            font-size: 2em;
-            font-weight: 800;
-            margin-bottom: 20px;
-        }
-        
-        .footer p {
-            color: rgba(255,255,255,0.7);
-            margin: 10px 0;
-        }
-        
-        .footer-divider {
-            height: 1px;
-            background: rgba(255,255,255,0.1);
-            margin: 30px 0;
-        }
-        
-        @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2.2em;
-            }
-            
-            .hero-subtitle {
-                font-size: 1.1em;
-            }
-            
-            .section-title {
-                font-size: 2em;
-            }
-            
-            .services-grid,
-            .plans-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .hero-cta,
-            .cta-buttons {
-                flex-direction: column;
-            }
-            
-            .btn {
-                width: 100%;
-                justify-content: center;
-            }
-            
-            .stats-grid {
-                grid-template-columns: 1fr;
-                gap: 30px;
-            }
-        }
-        
-        .alert-box {
-            background: #fff3cd;
-            border-left: 4px solid #ffc107;
-            border-radius: 12px;
-            padding: 30px;
-            margin: 50px auto;
-            max-width: 900px;
-        }
-        
-        .alert-box h3 {
-            color: #856404;
-            font-size: 1.5em;
-            font-weight: 700;
-            margin-bottom: 15px;
-            display: flex;
             align-items: center;
-            gap: 10px;
+            padding: 12px 0;
+            border-bottom: 1px solid #edf2f7;
+            color: var(--dark);
+            text-decoration: none;
         }
-        
-        .alert-box p {
-            color: #856404;
-            font-size: 1.1em;
-            line-height: 1.7;
+
+        .contact-item:last-child {
+            border-bottom: none;
+        }
+
+        .icon {
+            width: 38px;
+            height: 38px;
+            border-radius: 10px;
+            background: #e8fff5;
+            display: grid;
+            place-items: center;
+            color: #065f46;
+            font-size: 1.1rem;
+            font-weight: 700;
+        }
+
+        .muted {
+            color: var(--muted);
+            font-size: 0.97rem;
+        }
+
+        .sections {
+            margin-top: 40px;
+            display: grid;
+            grid-template-columns: 3fr 2fr;
+            gap: 28px;
+        }
+
+        .tile {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 18px;
+            padding: 22px;
+            box-shadow: 0 10px 24px rgba(0, 0, 0, 0.04);
+        }
+
+        .tile h3 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            letter-spacing: -0.3px;
+        }
+
+        .chips {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .chip {
+            background: #f0fdf4;
+            color: #0f5132;
+            padding: 10px 14px;
+            border-radius: 12px;
+            font-weight: 600;
+            border: 1px solid #bbf7d0;
+        }
+
+        .list {
+            list-style: none;
+            display: grid;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .list li {
+            padding: 12px;
+            border-radius: 12px;
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            font-weight: 600;
+            color: var(--dark);
+        }
+
+        .footer-note {
+            margin-top: 32px;
+            text-align: center;
+            color: var(--muted);
+            font-size: 0.95rem;
+        }
+
+        @media (max-width: 960px) {
+            body { padding: 16px; }
+            .intro, .sections { grid-template-columns: 1fr; }
+            h1 { font-size: 2.2rem; }
+            main { padding: 32px 24px 36px; }
         }
     </style>
 </head>
 <body>
-    <header class="header">
-        <div class="header-content">
-            <div class="logo">
-                ATOMA <span class="logo-accent">SAFETY</span>
+    <div class="card">
+        <header>
+            <div class="logo" aria-label="Atoma Safety">
+                <svg width="200" height="48" viewBox="0 0 200 48" fill="none" xmlns="http://www.w3.org/2000/svg" role="img">
+                    <rect x="1" y="1" width="46" height="46" rx="12" fill="#00D084" stroke="#00B874" stroke-width="2"/>
+                    <path d="M16 32L24 16L32 32H28.5L24 23.5L19.5 32H16Z" fill="white"/>
+                    <text x="56" y="21" fill="#0F172A" font-family="'Inter', Arial, sans-serif" font-size="16" font-weight="800">ATOMA</text>
+                    <text x="56" y="37" fill="#00D084" font-family="'Inter', Arial, sans-serif" font-size="16" font-weight="800">SAFETY</text>
+                </svg>
             </div>
-        </div>
-    </header>
+        </header>
 
-    <section class="hero">
-        <div class="hero-content">
-            <h1>La Sicurezza sul Lavoro <span class="hero-highlight">Semplificata</span></h1>
-            <p class="hero-subtitle">
-                Gestione completa della conformità normativa per la tua azienda. 
-                Elimina i rischi, proteggi i tuoi collaboratori, concentrati sul business.
-            </p>
-            <div class="hero-cta">
-                <a href="#contatti" class="btn btn-primary">
-                    <span>📞</span> Richiedi Consulenza Gratuita
-                </a>
-                <a href="#servizi" class="btn btn-secondary">
-                    <span>📋</span> Scopri i Servizi
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <section class="section">
-        <div class="container">
-            <div class="alert-box">
-                <h3>⚠️ Attenzione: Rischi di Non Conformità</h3>
-                <p>
-                    Le sanzioni per non conformità alla normativa sulla sicurezza possono raggiungere cifre significative 
-                    e comportare responsabilità penali. Il mancato aggiornamento della documentazione obbligatoria e della 
-                    formazione espone l'azienda a rischi legali, economici e reputazionali. Non lasciare nulla al caso.
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <section class="section" id="servizi">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">I Nostri Servizi</h2>
-                <p class="section-subtitle">
-                    Una soluzione completa e integrata per ogni aspetto della sicurezza sul lavoro
-                </p>
-            </div>
-            
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-icon">📋</div>
-                    <h3>DVR Completo</h3>
-                    <p>
-                        Realizziamo e gestiamo il Documento di Valutazione dei Rischi personalizzato 
-                        per la tua realtà aziendale, sempre aggiornato con le normative vigenti.
+        <main>
+            <section class="intro">
+                <div>
+                    <div class="eyebrow">Atoma Safety · Exsternal consultant</div>
+                    <h1>Danilo Dell'Orto</h1>
+                    <p class="subtitle">
+                        Il tuo referente unico per la sicurezza sul lavoro. Contatta direttamente Danilo per chiarimenti,
+                        preventivi o per programmare una visita in azienda, con il supporto del network Atoma Safety.
                     </p>
-                </div>
-                
-                <div class="service-card">
-                    <div class="service-icon">🎓</div>
-                    <h3>Formazione Obbligatoria</h3>
-                    <p>
-                        Corsi di formazione e aggiornamento per tutti i ruoli: RSPP, RLS, preposti, 
-                        addetti emergenze. Modalità in aula, e-learning o blended.
-                    </p>
-                </div>
-                
-                <div class="service-card">
-                    <div class="service-icon">📜</div>
-                    <h3>Gestione Attestati</h3>
-                    <p>
-                        Produzione, archiviazione digitale e gestione centralizzata di tutti gli 
-                        attestati di formazione conformi alla normativa.
-                    </p>
-                </div>
-                
-                <div class="service-card">
-                    <div class="service-icon">⚕️</div>
-                    <h3>Protocollo Sanitario</h3>
-                    <p>
-                        Definizione del protocollo sanitario e organizzazione completa delle visite 
-                        mediche periodiche obbligatorie per i lavoratori.
-                    </p>
-                </div>
-                
-                <div class="service-card">
-                    <div class="service-icon">⏰</div>
-                    <h3>Alert Automatici</h3>
-                    <p>
-                        Sistema intelligente di notifica per scadenze documentali, rinnovi attestati 
-                        e visite mediche. Non perdi mai una deadline importante.
-                    </p>
-                </div>
-                
-                <div class="service-card">
-                    <div class="service-icon">💼</div>
-                    <h3>Supporto Dedicato</h3>
-                    <p>
-                        Team di esperti in sicurezza sul lavoro sempre disponibile per assistenza, 
-                        consulenza e supporto operativo personalizzato.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="section benefits-section">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Perché Atoma Safety</h2>
-                <p class="section-subtitle">
-                    La scelta intelligente per aziende che vogliono efficienza e conformità garantita
-                </p>
-            </div>
-            
-            <div class="benefits-grid">
-                <div class="benefit-item">
-                    <div class="benefit-icon">✓</div>
-                    <div class="benefit-content">
-                        <h4>Conformità Garantita</h4>
-                        <p>Aggiornamento costante con le normative vigenti. Zero preoccupazioni per ispezioni e controlli.</p>
+                    <div class="cta-row">
+                        <a class="btn btn-primary" href="tel:+390245495331">📞 Chiama ora</a>
+                        <a class="btn btn-primary" style="background:#25D366;border-color:#25D366;color:#0b2f1c;" href="https://wa.me/393925454995?text=Ciao%20Danilo%2C%20vorrei%20informazioni%20su%20Atoma%20Safety" target="_blank">💬 WhatsApp</a>
+                        <a class="btn btn-outline" href="mailto:d.dellorto@atoma.com">✉️ Invia email</a>
+                        <a class="btn btn-outline" href="https://atoma.com" target="_blank">🌐 Visita il sito</a>
                     </div>
                 </div>
-                
-                <div class="benefit-item">
-                    <div class="benefit-icon">✓</div>
-                    <div class="benefit-content">
-                        <h4>Risparmio di Tempo</h4>
-                        <p>Eliminiamo la burocrazia e gestiamo tutte le scadenze. Tu ti concentri sul core business.</p>
+                <div class="contact-panel">
+                    <div class="contact-title">Contatti diretti</div>
+                    <a class="contact-item" href="tel:+390245495331">
+                        <div class="icon">☎️</div>
+                        <div>
+                            <div>02 4549 5331</div>
+                            <div class="muted">Telefono ufficio</div>
+                        </div>
+                    </a>
+                    <a class="contact-item" href="https://wa.me/393925454995?text=Ciao%20Danilo%2C%20vorrei%20informazioni%20su%20Atoma%20Safety" target="_blank">
+                        <div class="icon">📱</div>
+                        <div>
+                            <div>392 54 54 995</div>
+                            <div class="muted">Cellulare & WhatsApp</div>
+                        </div>
+                    </a>
+                    <a class="contact-item" href="mailto:d.dellorto@atoma.com">
+                        <div class="icon">📧</div>
+                        <div>
+                            <div>d.dellorto@atoma.com</div>
+                            <div class="muted">Email diretta</div>
+                        </div>
+                    </a>
+                    <div class="contact-item">
+                        <div class="icon">📍</div>
+                        <div>
+                            <div>Via Aniene 2, 20151 Milano (MI)</div>
+                            <div class="muted">Disponibile per incontri su appuntamento</div>
+                        </div>
                     </div>
                 </div>
-                
-                <div class="benefit-item">
-                    <div class="benefit-icon">✓</div>
-                    <div class="benefit-content">
-                        <h4>Portale Digitale 24/7</h4>
-                        <p>Accesso sempre disponibile a tutta la documentazione aziendale da qualsiasi dispositivo.</p>
-                    </div>
-                </div>
-                
-                <div class="benefit-item">
-                    <div class="benefit-icon">✓</div>
-                    <div class="benefit-content">
-                        <h4>Soluzione Modulare</h4>
-                        <p>Servizi scalabili e personalizzabili in base alle dimensioni e al rischio aziendale.</p>
-                    </div>
-                </div>
-                
-                <div class="benefit-item">
-                    <div class="benefit-icon">✓</div>
-                    <div class="benefit-content">
-                        <h4>Azzeramento Rischi</h4>
-                        <p>Evita sanzioni amministrative e penali. Proteggi il benessere dei tuoi collaboratori.</p>
-                    </div>
-                </div>
-                
-                <div class="benefit-item">
-                    <div class="benefit-icon">✓</div>
-                    <div class="benefit-content">
-                        <h4>Expertise Certificata</h4>
-                        <p>Team di professionisti qualificati con esperienza pluriennale nel settore sicurezza.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+            </section>
 
-    <section class="section stats-section">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title" style="color: white;">Atoma Safety in Numeri</h2>
-            </div>
-            
-            <div class="stats-grid">
-                <div class="stat-item">
-                    <span class="stat-number">100%</span>
-                    <span class="stat-label">Conformità Normativa Garantita</span>
+            <section class="sections">
+                <div class="tile">
+                    <h3>Cosa puoi chiedere a Danilo</h3>
+                    <p class="muted">Supporto immediato su sicurezza, compliance e organizzazione operativa.</p>
+                    <div class="chips">
+                        <span class="chip">DVR e documentazione</span>
+                        <span class="chip">Formazione obbligatoria</span>
+                        <span class="chip">Visite mediche e protocolli</span>
+                        <span class="chip">Audit e piani di miglioramento</span>
+                        <span class="chip">Alert scadenze e portale digitale</span>
+                    </div>
                 </div>
-                <div class="stat-item">
-                    <span class="stat-number">24/7</span>
-                    <span class="stat-label">Accesso al Portale Web</span>
-                </div>
-                <div class="stat-item">
-                    <span class="stat-number">0</span>
-                    <span class="stat-label">Pensieri sulla Sicurezza</span>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <section class="section plans-section">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Piani su Misura per Ogni Azienda</h2>
-                <p class="section-subtitle">
-                    Soluzioni personalizzate in base al livello di rischio e alle dimensioni aziendali
-                </p>
-            </div>
-            
-            <div class="plans-grid">
-                <div class="plan-card">
-                    <div class="plan-badge">🟢 RISCHIO BASSO</div>
-                    <h3>Piano Base</h3>
-                    <p>Ideale per uffici, studi professionali e attività commerciali a basso rischio</p>
-                    <ul class="plan-features">
-                        <li>DVR personalizzato</li>
-                        <li>Formazione obbligatoria</li>
-                        <li>Alert scadenze automatici</li>
-                        <li>Portale web dedicato</li>
+                <div class="tile">
+                    <h3>Chi è Atoma Safety</h3>
+                    <p class="muted">Una rete di professionisti che affianca aziende e PMI in ogni aspetto di salute e sicurezza sul lavoro.</p>
+                    <ul class="list">
+                        <li>Consulenza e documenti sempre aggiornati con team dedicato</li>
+                        <li>Percorsi formativi personalizzati e tracciati online</li>
+                        <li>Medicina del lavoro e visite programmate senza attese</li>
+                        <li>Portale digitale per scadenze, attestati e audit</li>
                     </ul>
                 </div>
-                
-                <div class="plan-card">
-                    <div class="plan-badge">🟡 RISCHIO MEDIO</div>
-                    <h3>Piano Professional</h3>
-                    <p>Per aziende produttive e realtà con rischi specifici da gestire</p>
-                    <ul class="plan-features">
-                        <li>Tutto del Piano Base</li>
-                        <li>Protocollo sanitario completo</li>
-                        <li>Visite mediche organizzate</li>
-                        <li>Sopralluoghi periodici</li>
-                        <li>Supporto prioritario</li>
-                    </ul>
-                </div>
-                
-                <div class="plan-card">
-                    <div class="plan-badge">🔴 RISCHIO ALTO</div>
-                    <h3>Piano Enterprise</h3>
-                    <p>Gestione avanzata per ambienti complessi e ad alto rischio</p>
-                    <ul class="plan-features">
-                        <li>Tutto del Piano Professional</li>
-                        <li>Consulente dedicato on-site</li>
-                        <li>Audit periodici avanzati</li>
-                        <li>Piani emergenza personalizzati</li>
-                        <li>Supporto H24</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
+            </section>
 
-    <section class="cta-section" id="contatti">
-        <div class="container">
-            <h2>Inizia Oggi la Tua Trasformazione</h2>
-            <p>Contattaci per una consulenza gratuita e scopri come semplificare la gestione della sicurezza</p>
-            
-            <div class="cta-buttons">
-                <a href="tel:+390000000000" class="btn btn-primary">
-                    <span>📞</span> Chiama Ora
-                </a>
-                <a href="https://wa.me/390000000000?text=Ciao,%20vorrei%20informazioni%20su%20Atoma%20Safety" class="btn btn-whatsapp" target="_blank">
-                    <span>💬</span> WhatsApp
-                </a>
-                <a href="mailto:info@atomasafety.com" class="btn btn-secondary">
-                    <span>✉️</span> Invia Email
-                </a>
-            </div>
-            
-            <div class="contact-card">
-                <div class="contact-item">
-                    <div class="contact-icon">📧</div>
-                    <div>info@atomasafety.com</div>
-                </div>
-                <div class="contact-item">
-                    <div class="contact-icon">🌐</div>
-                    <div>www.atomasafety.com</div>
-                </div>
-                <div class="contact-item">
-                    <div class="contact-icon">📍</div>
-                    <div>P.IVA: [Inserire P.IVA]</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <footer class="footer">
-        <div class="footer-content">
-            <div class="footer-logo">ATOMA <span style="color: #00d084;">SAFETY</span></div>
-            <p>Il partner di riferimento per la sicurezza sul lavoro in Italia</p>
-            <div class="footer-divider"></div>
-            <p style="font-size: 0.9em;">© 2024 Atoma Safety S.r.l. - Tutti i diritti riservati - P.IVA [Inserire P.IVA]</p>
-        </div>
-    </footer>
+            <p class="footer-note">Danilo opera come exsternal consultant del network Atoma Safety. Questo è il suo biglietto da visita digitale ufficiale.</p>
+        </main>
+    </div>
 </body>
 </html>

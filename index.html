@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Danilo Dell'Orto | Consulente Atoma Safety</title>
+    <title>Danilo Dell'Orto | External Consultant · Atoma Safety</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -48,14 +48,15 @@
         }
 
         .logo {
-            font-weight: 800;
-            letter-spacing: -0.5px;
-            font-size: 1.4rem;
-            color: var(--dark);
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
         }
 
-        .logo span {
-            color: var(--brand);
+        .logo img {
+            height: 40px;
+            width: auto;
+            display: block;
         }
 
         main {
@@ -82,8 +83,8 @@
         }
 
         h1 {
-            font-size: 2.8rem;
-            line-height: 1.15;
+            font-size: 3.2rem;
+            line-height: 1.1;
             margin: 18px 0 12px;
             letter-spacing: -1px;
         }
@@ -234,31 +235,6 @@
             color: var(--dark);
         }
 
-        form {
-            display: grid;
-            gap: 12px;
-            margin-top: 12px;
-        }
-
-        input, textarea {
-            width: 100%;
-            padding: 14px 12px;
-            border-radius: 12px;
-            border: 1px solid #d8dee9;
-            background: #f8fafc;
-            font-size: 1rem;
-            transition: border-color 0.2s ease, box-shadow 0.2s ease;
-        }
-
-        input:focus, textarea:focus {
-            outline: none;
-            border-color: var(--brand);
-            box-shadow: 0 0 0 3px rgba(0, 208, 132, 0.18);
-            background: #ffffff;
-        }
-
-        textarea { min-height: 110px; resize: vertical; }
-
         .footer-note {
             margin-top: 32px;
             text-align: center;
@@ -277,18 +253,20 @@
 <body>
     <div class="card">
         <header>
-            <div class="logo">ATOMA <span>SAFETY</span></div>
+            <div class="logo">
+                <img src="atoma safety.svg" alt="Atoma Safety logo">
+            </div>
             <div class="muted">Biglietto da visita digitale</div>
         </header>
 
         <main>
             <section class="intro">
                 <div>
-                    <div class="eyebrow">Danilo Dell'Orto · Consulente esterno</div>
-                    <h1>Il tuo referente unico per la sicurezza sul lavoro</h1>
+                    <div class="eyebrow">Atoma Safety · External consultant</div>
+                    <h1>Danilo Dell'Orto</h1>
                     <p class="subtitle">
-                        Contatta direttamente Danilo per chiarimenti, preventivi o per programmare una visita in azienda.
-                        Un punto di contatto unico per documentazione, formazione e scadenze.
+                        Il tuo referente unico per la sicurezza sul lavoro. Contatta direttamente Danilo per chiarimenti,
+                        preventivi o per programmare una visita in azienda, con il supporto del network Atoma Safety.
                     </p>
                     <div class="cta-row">
                         <a class="btn btn-primary" href="tel:+390245495331">📞 Chiama ora</a>
@@ -344,28 +322,18 @@
                 </div>
 
                 <div class="tile">
-                    <h3>Preferisci lasciare un messaggio?</h3>
-                    <p class="muted">Compila il form: riceverai una risposta entro la giornata lavorativa.</p>
-                    <form action="mailto:d.dellorto@atoma.com" method="post">
-                        <input type="text" name="name" placeholder="Nome e cognome" required>
-                        <input type="email" name="email" placeholder="Email" required>
-                        <input type="tel" name="phone" placeholder="Telefono (opzionale)">
-                        <textarea name="message" placeholder="Descrivi brevemente l'esigenza"></textarea>
-                        <button type="submit" class="btn btn-primary" style="justify-content:center;">Invia a Danilo</button>
-                    </form>
+                    <h3>Chi è Atoma Safety</h3>
+                    <p class="muted">Una rete di professionisti che affianca aziende e PMI in ogni aspetto di salute e sicurezza sul lavoro.</p>
+                    <ul class="list">
+                        <li>Consulenza e documenti sempre aggiornati con team dedicato</li>
+                        <li>Percorsi formativi personalizzati e tracciati online</li>
+                        <li>Medicina del lavoro e visite programmate senza attese</li>
+                        <li>Portale digitale per scadenze, attestati e audit</li>
+                    </ul>
                 </div>
             </section>
 
-            <div class="tile" style="margin-top: 20px;">
-                <h3>Coordinate rapide</h3>
-                <ul class="list">
-                    <li>Disponibilità: dal lunedì al venerdì, 9:00 - 18:00</li>
-                    <li>Risposta entro: massimo 1 giorno lavorativo</li>
-                    <li>Area di intervento: Milano e Lombardia, con supporto remoto per il resto d'Italia</li>
-                </ul>
-            </div>
-
-            <p class="footer-note">Danilo opera come consulente esterno del network Atoma Safety. Questo è il suo biglietto da visita digitale ufficiale.</p>
+            <p class="footer-note">Danilo opera come external consultant del network Atoma Safety. Questo è il suo biglietto da visita digitale ufficiale.</p>
         </main>
     </div>
 </body>
